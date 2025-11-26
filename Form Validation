@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation Example</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .form-container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        width: 400px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .error {
+        color: red;
+        font-size: 14px;
+        display: none;
+        margin-top: 5px;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background-color: #0d6efd;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Signup Form</h2>
+    <form id="signupForm" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name">
+            <div class="error" id="nameError">Please enter a valid name (at least 3 characters).</div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <div class="error" id="emailError">Please enter a valid email.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+            <div class="error" id="passwordError">Password must be at least 6 characters.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" placeholder="Enter your phone number">
+            <div class="error" id="phoneError">Please enter a valid 10-digit phone number.</div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+function validateForm() {
+    let valid = true;
+
+    // Get input values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    // Name validation
+    if(name.length < 3) {
+        document.getElementById('nameError').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('nameError').style.display = 'none';
+    }
+
+    // Email validation
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if(!email.match(emailPattern)) {
+        document.getElementById('emailError').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('emailError').style.display = 'none';
+    }
+
+    // Password validation
+    if(password.length < 6) {
+        document.getElementById('passwordError').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('passwordError').style.display = 'none';
+    }
+
+    // Phone validation
+    const phonePattern = /^[0-9]{10}$/;
+    if(!phone.match(phonePattern)) {
+        document.getElementById('phoneError').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('phoneError').style.display = 'none';
+    }
+
+    // If all fields are valid, show success message
+    if(valid) {
+        alert("Form submitted successfully!");
+    }
+
+    return false; // prevent actual form submission for demo
+}
+</script>
+
+</body>
+</html>
