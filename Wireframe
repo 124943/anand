@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Wireframe</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef1f4;
+        }
+
+        /* Header */
+        header {
+            background: #2a3d66;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #3e4e79;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            gap: 12px;
+        }
+        nav a {
+            color: white;
+            padding: 10px 18px;
+            background: #4f5f8a;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background: #6f7fb2;
+        }
+
+        /* Section Containers */
+        section {
+            max-width: 1100px;
+            margin: 25px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        section h2 {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d2d2d2;
+            color: #333;
+            font-size: 22px;
+        }
+        .block {
+            padding: 15px;
+            border: 2px dashed #bbb;
+            border-radius: 8px;
+            margin: 10px 0;
+            background: #fafafa;
+            text-align: center;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+            gap: 15px;
+        }
+        .grid-item {
+            padding: 20px;
+            background: #f7f7f7;
+            border: 1px dashed #aaa;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #2a3d66;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>🧭  Wireframe</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="#login">Login</a>
+    <a href="#register">Register</a>
+    <a href="#category">Categories</a>
+    <a href="#admin-login">Admin Login</a>
+    <a href="#product-admin">Product Admin</a>
+    <a href="#view1">View 1</a>
+    <a href="#view2">View 2</a>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+    <h2>🏠 Home Page</h2>
+    <div class="block">Hero Banner / Slider</div>
+    <div class="block">Navigation Area</div>
+    <div class="block">Featured Product Highlights</div>
+    <div class="block">Footer Section</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>📞 Contact Page</h2>
+    <div class="block">Form: Name - Email - Message</div>
+    <div class="block">Map or Office Address Block</div>
+</section>
+
+<!-- LOGIN -->
+<section id="login">
+    <h2>🔐 Login Page</h2>
+    <div class="block">Username / Email</div>
+    <div class="block">Password</div>
+    <div class="block">Login Button</div>
+</section>
+
+<!-- REGISTER -->
+<section id="register">
+    <h2>📝 Registration Page</h2>
+    <div class="block">Name / Email / Password / Confirm Password</div>
+    <div class="block">Gender / Age / Country</div>
+    <div class="block">Register Button</div>
+</section>
+
+<!-- CATEGORY PAGE -->
+<section id="category">
+    <h2>🗂️ Categories</h2>
+    <div class="grid">
+        <div class="grid-item">Adventure</div>
+        <div class="grid-item">Cultural</div>
+        <div class="grid-item">Nature</div>
+        <div class="grid-item">Luxury</div>
+    </div>
+</section>
+
+<!-- ADMIN LOGIN -->
+<section id="admin-login">
+    <h2>🧑‍💼 Admin Login</h2>
+    <div class="block">Admin ID</div>
+    <div class="block">Password</div>
+    <div class="block">Login Button</div>
+</section>
+
+<!-- PRODUCT MANAGEMENT -->
+<section id="product-admin">
+    <h2>⚙️ Product Management</h2>
+    <div class="block">Add Product Form</div>
+    <div class="block">Product List Table + Edit/Delete</div>
+</section>
+
+<!-- USER VIEW 1 -->
+<section id="view1">
+    <h2>🛍️ User Product View 1</h2>
+    <div class="grid">
+        <div class="grid-item">Image Placeholder</div>
+        <div class="grid-item">Product Information</div>
+        <div class="grid-item">Add to Cart</div>
+    </div>
+</section>
+
+<!-- USER VIEW 2 -->
+<section id="view2">
+    <h2>🛒 User Product View 2</h2>
+    <div class="grid">
+        <div class="grid-item">Product Image</div>
+        <div class="grid-item">Product Description</div>
+        <div class="grid-item">Price + Purchase Button</div>
+    </div>
+</section>
+
+<footer>
+    © 2025 Modern Wireframe — Redesigned Version
+</footer>
+
+</body>
+</html>
